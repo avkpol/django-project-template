@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang ="uk">
+  <head>
+      <meta charset="UTF-8"/>
+      <title> Сервіс Обліку Студентів </title>
+      <meta name="description"
+            value="Система обліку студентів навчального закладу" />
+      <!-- Include Styles -->
+            <link rel="stylesheet"
+                href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="./css/main.css">
+
+      <!--Include styles-->
+
+            <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+      <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border:0px solid #edfdff;}</style>
+
+
+  </head>
+    <body>
+       <!-- Start Container -->
+       <div class="container">
+
+            <!-- Start Header -->
+        <div class="row" id="header">
+
+            <!-- Logo -->
+        <div class="col-xs-8">
+            <h1>Сервіс Обліку Студентів</h1>
+        </div>
+            <!-- Groups Selector -->
+            <div class="col-xs-4" id="group-selector">
+                <strong>Група:</strong>
+                <select>
+                    <option value="">Усі Студенти</option>
+                    <option value="">МтМ - 21, Подоба Віталій (No 3126)</option>
+                    <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
+                    <option value="">МтМ - 25, Заєць Андрій (No 4520)</option>
+                </select>
+            </div>
+        </div>
+        <!-- End Header -->
+
+            <!-- Тут ми оновили лінки головної навігації: Студенти,
+			Відвідування, Групи; атрибути "href" всередині "a" тегів -->
+			<!-- Start subheader -->
+				<div class="row" id="sub-header">
+					<div class="col-xs-12">
+						<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="{% url "home" %}">Студенти</a></li>
+						<li role="presentation"><a href="/journal">Відвідування</a></li>
+						<li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
+						</ul>
+					</div>
+				</div>
+			<!-- End subheader -->
+
+
+           <!-- Start Main Page Content -->
+        <div class="row" id="content-columns">
+                <div class="col-xs-12" id="content-column">
+                <!-- Status Message -->
+                <div class="alert alert-warning">Зміни скасовано.</div>
+                 
+				<!-- А тут оновлена адреса кнопки Додати Студента -->
+				<h2>База Студентів</h2>
+				<!-- Add Student Button -->
+                <a href="{% url "students_add" %}" class="btn btn-primary">Додати Студента</a>
+               <div>
+                <!-- Start Students Listing -->
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                <th><a href="">No</a></th>
+                <th>Фото</th>
+                <th><a href="">Прізвище &uarr;</a></th>
+                <th><a href="#">Ім'я</a></th>
+                <th><a href="#">No Білету</a></th>
+                <th>Дії</th>
+            </thead>
+            <tbody>
+               <!-- Також оновлено посилання на дії над студентом та лінки Імені
+					та Прізвища студента -->
+				<tr>
+					<td>1</td>
+					<td><img class="img-circle" src="./img/img1.png" height="30" width="30" /></td>
+					<td><a href="{% url "students_edit" 1 %}">Корост</td>
+					<td><a href="{% url "students_edit" 1 %}">Андрій</td>
+					<td>2123</td>
+				 <td>
+				   <div class="btn-group">
+					    <button type="button" class="btn btn-default dropdown-toggle"data-toggle="dropdown">Дія
+					    <span class="caret"></span>
+					    </button>
+						<ul class="dropdown-menu" role="menu">
+						<li><a href="{% url "students_edit" 1 %}">Редагувати</a></li>
+						<li><a href="/journal/1">Відвідування</a></li>
+						<li><a href="{% url "students_delete" 1 %}">Видалити</a></li>
+						</ul>
+					</div>
+				  </td>
+				</tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>2</td>
+                    <td><img class="img-circle" src="./img/img2.png" height="30" width="30" /></td>
+					<td><a href="/students/1/edit">Заєць</td>
+					<td><a href="/students/1/edit">Андрій</td>
+					<td>2125</td>
+				<td>
+				   <div class="btn-group">
+					    <button type="button" class="btn btn-default dropdown-toggle"data-toggle="dropdown">Дія
+					    <span class="caret"></span>
+					    </button>
+						<ul class="dropdown-menu" role="menu">
+						<li><a href="/students/2/edit">Редагувати</a></li>
+						<li><a href="/journal/2">Відвідування</a></li>
+						<li><a href="/students/2/delete">Видалити</a></li>
+						</ul>
+					</div>
+                </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>3</td>
+                    <td><img class="img-circle" src="./img/img3.png" height="30" width="30" /></td>
+					<td><a href="/students/1/edit">Подоба</td>
+					<td><a href="/students/1/edit">Віталій</td>
+					<td>2130</td>
+				<td>
+				   <div class="btn-group">
+					    <button type="button" class="btn btn-default dropdown-toggle"data-toggle="dropdown">Дія
+					    <span class="caret"></span>
+					    </button>
+						<ul class="dropdown-menu" role="menu">
+						<li><a href="/students/3/edit">Редагувати</a></li>
+						<li><a href="/journal/3">Відвідування</a></li>
+						<li><a href="/students/3/delete">Видалити</a></li>
+						</ul>
+					</div>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+          <!-- End Students Listing -->
+         <!-- Start page navigation -->
+            <nav>
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </nav>
+
+          <!-- End page navigation -->
+
+
+              </div>
+
+            </div>
+
+        </div>
+
+            <!-- End Main Page Content -->
+
+            <!-- Start Footer -->
+            <div class="row" id="footer">
+                <div class="col-xs-12">
+                &copy; 2014 Сервіс Обліку Студентів
+            </div>
+            </div>
+        <!-- End Footer -->
+        </div>
+
+        <!-- End Container -->
+
+			<!-- Javascripts Inclusion -->
+  			<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 		 	<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
+
+
+    </body>
+ </html>
+
+
