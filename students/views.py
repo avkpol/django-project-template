@@ -9,7 +9,7 @@ def students_add(request):
 	return HttpResponse('<h1>Student Add Form</h1>')
 
 def students_edit(request, sid):
-	return HttpResponse('<h1>Edit Student %s</h1>' % sid)
+	return HttpResponse('<h2>Edit Student %s</h2>' % sid)
 
 def students_delete(request, sid):
 	return HttpResponse('<h1>Delete Student %s</h1>' % sid)
