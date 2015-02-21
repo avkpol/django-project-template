@@ -1,72 +1,14 @@
 
+{% extends "students/base.html" %}
 
+{% load static from staticfiles %}
 
- {% load static from staticfiles %}
-<!DOCTYPE html>
-<html lang ="uk">
-  <head>
-      <meta charset="UTF-8"/>
-      <title> Сервіс Обліку Студентів </title>
-      <meta name="description"
-            value="Система обліку студентів навчального закладу" />
-      <!-- Include Styles -->
-            <link rel="stylesheet"
-                href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-                <link rel="stylesheet" href="{% static 'css/main.css' %}">
-				<!-- <link rel="stylesheet" href="./css/main.css"> -->
+{% block meta_title %}Студенти{% endblock meta_title %}
 
-      <!--Include styles-->
+{% block title %}База Студентів{% endblock title %}
 
-            <link rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-      <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border:0px solid #edfdff;}</style>
+{% block content %}
 
-
-  </head>
-    <body>
-       <!-- Start Container -->
-       <div class="container">
-
-            <!-- Start Header -->
-        <div class="row" id="header">
-
-            <!-- Logo -->
-        <div class="col-xs-8">
-            <h1>Сервіс Обліку Студентів</h1>
-        </div>
-            <!-- Groups Selector -->
-            <div class="col-xs-4" id="group-selector">
-                <strong>Група:</strong>
-                <select>
-                    <option value="">Усі Студенти</option>
-                    <option value="">МтМ - 21, Подоба Віталій (No 3126)</option>
-                    <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
-                    <option value="">МтМ - 25, Заєць Андрій (No 4520)</option>
-                </select>
-            </div>
-        </div>
-        <!-- End Header -->
-           <!-- Тут ми оновили лінки головної навігації: Студенти,
-			Відвідування, Групи; атрибути "href" всередині "a" тегів -->
-			<!-- Start subheader -->
-		<div class="row" id="sub-header">
-		   <div class="col-xs-12">
-			<ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="{% url 'home' %}">Студенти</a></li>
-				<li role="presentation"><a href="/journal">Відвідування</a></li>
-				<li role="presentation"><a href="{% url 'groups' %}">Групи</a></li>
-			</ul>
-		   </div>
-		</div>
-       		 <!-- End SubHeader -->
-          		 <!-- Start Main Page Content -->
-       		 <div class="row" id="content-columns">
-                <div class="col-xs-12" id="content-column">
-                <!-- Status Message -->
-                <div class="alert alert-warning">Зміни скасовано.</div>
-
-        	<!-- А тут оновлена адреса кнопки Додати Студента -->
-			 <h2>База Студентів</h2>
 		    	<a href="{% url 'students_add' %}" class="btn btn-primary">Додати Студента</a>
            
                 <!-- Start Students Listing -->
@@ -119,6 +61,7 @@
                     <li><a href="#">&raquo;</a></li>
                 </ul>
             </nav>
+{% endblock content %}
 
           <!-- End page navigation -->
 
