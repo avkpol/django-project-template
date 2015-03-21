@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> a83d2d578620aae3f409aba2a4e17a0ec48f0334
 {% extends "students/base.html" %}
 
 {% load static from staticfiles %}
@@ -7,6 +11,7 @@
 {% block title %}База Студентів{% endblock title %}
 
 {% block content %}
+<<<<<<< HEAD
 <a href="{% url "students_add" %}" class="btn btn-primary">Додати Студента</a>
 
 <!-- Start Students Listing -->
@@ -96,3 +101,82 @@
 {% endif %}
         
 {% endblock content %}
+=======
+
+		    	<a href="{% url 'students_add' %}" class="btn btn-primary">Додати Студента</a>
+           
+                <!-- Start Students Listing -->
+       	 <table class="table table-hover table-striped">
+           	 <thead>
+                <tr>
+                <th><a href="">No</a></th>
+                <th>Фото</th>
+                <th><a href="">Прізвище &uarr;</a></th>
+                <th><a href="#">Ім'я</a></th>
+                <th><a href="#">No Білету</a></th>
+                <th>Дії</th>
+            </thead>
+            <tbody>
+                {% for student in students %}
+			    <tr>
+				    <td>{{ forloop.counter }}</td>
+					<td><img class="img-circle" src="{{ student.photo.url }}" height="30" width="30" /></td>
+					<td><a href="{% url 'students_edit' student.id %}">{{ student.last_name }}</td>
+					<td><a href="{% url 'students_edit' student.id %}">{{ student.first_name }}</td>
+					<td>{{ student.ticket }}</td>
+				   <td>
+					<div class="btn-group">
+					  <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">Дія
+						<span class="caret"></span>
+					  </button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{% url 'students_edit' student.id %}">Редагувати</a></li>
+							<li><a href="/journal/{{ student.id }}">Відвідування</a></li>
+							<li><a href="{% url 'students_delete' student.id %}">Видалити</a></li>
+						</ul>
+					</div>
+				   </td>
+			    </tr>
+                {% endfor %}
+          </tbody>
+          
+        </table>
+          <!-- End Students Listing -->
+         <!-- Start page navigation -->
+{% endblock content %} 
+
+{% include "students/nav.html" %}
+
+          <!-- End page navigation -->
+
+
+              </div>
+
+            </div>
+
+        </div>
+
+            <!-- End Main Page Content -->
+
+            <!-- Start Footer -->
+            <div class="row" id="footer">
+                <div class="col-xs-12">
+                &copy; 2014 Сервіс Обліку Студентів
+            </div>
+            </div>
+        <!-- End Footer -->
+        </div>
+
+        <!-- End Container -->
+
+     
+         <!-- Javascripts Inclusion -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      
+    </body>
+ </html>
+
+
+>>>>>>> a83d2d578620aae3f409aba2a4e17a0ec48f0334

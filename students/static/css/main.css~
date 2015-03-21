@@ -1,13 +1,7 @@
 /* Global Styles */
-<<<<<<< HEAD
-.alert {
-  margin: 10px 0 5px 0;
-}
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-=======
-h1, h2, h3, h4, h5, h6 {
-font-weight: bold;/*грубий шрифт*/
+/*грубий шрифт*/
+font-weight: bold;
 }
 .alert {
 /* Ми додали відстань лише зверху елемента: -top */
@@ -21,30 +15,10 @@ footer */
 border-top: 1px solid #dddddd;
 /* задаємо внутрішню відстань елемента до верхнього краю */
 padding-top: 10px;
->>>>>>> a83d2d578620aae3f409aba2a4e17a0ec48f0334
 }
 
 /* Groups Selector */
 #group-selector {
-<<<<<<< HEAD
-  margin-top: 30px;
-}
-#group-selector select {
-  width: 80%;
-  margin: 0;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  height: 30px;
-  line-height: 30px;
-  color: #555555;
-}
-
-/* Footer Styles */
-#footer {
-  border-top: 1px solid #dddddd;
-  padding-top: 10px;
-}
-=======
 margin: 10px 0;
 }
 #group-selector select {
@@ -56,4 +30,3 @@ height: 30px;
 line-height: 30px;
 color: #555555;
 }
->>>>>>> a83d2d578620aae3f409aba2a4e17a0ec48f0334
