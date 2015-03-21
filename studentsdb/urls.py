@@ -2,14 +2,12 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 urlpatterns = patterns('',
-<<<<<<< HEAD
     # Examples:
     # url(r'^$', 'studentsdb.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 )
-=======
 	# Students urls
 	url(r'^$', 'students.views.students.students_list', name='home'),
 	url(r'^students/add/$', 'students.views.students.students_add',
@@ -39,4 +37,4 @@ if DEBUG:
 	# serve files from media folder
 	urlpatterns += patterns('',
 		url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}))
->>>>>>> a83d2d578620aae3f409aba2a4e17a0ec48f0334
+
